@@ -12,6 +12,8 @@ public class ComplexFormController {
 	@RequestMapping(path = "/complexForm")
 	public String complexForm() {
 
+		System.out.println("inside complexForm");
+
 		return "complexForm";
 
 	}
