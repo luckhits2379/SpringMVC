@@ -11,15 +11,19 @@ public class CentralExceptionHandler {
 
 	@ResponseStatus(value = HttpStatus.INTERNAL_SERVER_ERROR)
 	@ExceptionHandler(value = NullPointerException.class)
-	public String nullExceptionHandler(Model m) {
+	public String nullExceptionHandler(Exception e, Model m) {
 
 		m.addAttribute("error", "Null Exception Occured");
+		e.printStackTrace();
+
 		return "Error";
 
 	}
 
 	@ExceptionHandler(value = Exception.class)
-	public String exceptionHandler() {
+	public String exceptionHandler(Exception e) {
+
+		e.printStackTrace();
 
 		return "Error";
 

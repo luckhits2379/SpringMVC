@@ -89,10 +89,10 @@ public class ControllerMVC {
 		return "signupUsingModelAttribute";
 	}
 
-	@RequestMapping(path = "/precessSignupUsingModelAttribute", method = RequestMethod.POST)
-	public String precessSignupUsingModelAttribute(@ModelAttribute User user, Model m) {
+	@RequestMapping(path = "/processSignupUsingModelAttribute", method = RequestMethod.POST)
+	public String processSignupUsingModelAttribute(@ModelAttribute User user, Model m) {
 
-		System.out.println("Inside precessSignupUsingModelAttribute");
+		System.out.println("Inside processSignupUsingModelAttribute");
 
 		System.out.println(user.getEmail());
 		System.out.println(user.getName());
@@ -119,10 +119,10 @@ public class ControllerMVC {
 		return "signupORM";
 	}
 
-	@RequestMapping(path = "/precessSignupUsingORM", method = RequestMethod.POST)
+	@RequestMapping(path = "/processSignupUsingORM", method = RequestMethod.POST)
 	public String processForm3(@ModelAttribute com.ng.spring.mvc.orm.model.User user, BindingResult result, Model m) throws Exception {
 
-		System.out.println("Inside precessSignupUsingORM");
+		System.out.println("Inside processSignupUsingORM");
 
 		System.out.println(user.getEmail());
 		System.out.println(user.getName());

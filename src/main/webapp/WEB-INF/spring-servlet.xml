@@ -19,7 +19,7 @@
 
 	<mvc:interceptors>
 		<mvc:interceptor>
-			<mvc:mapping path="/precessSignupUsingModelAttribute" />
+			<mvc:mapping path="/processSignupUsingModelAttribute" />
 			<bean class="com.ng.spring.mvc.controller.Interceptor"/>
 		</mvc:interceptor>
 	</mvc:interceptors>
@@ -83,6 +83,10 @@
 		<property name="sessionFactory" ref="sessionFactory" />
 
 	</bean>
+	
+	
+	<bean name = "multipartResolver" class = "org.springframework.web.multipart.commons.CommonsMultipartResolver"/>
+
 
 
 </beans>
