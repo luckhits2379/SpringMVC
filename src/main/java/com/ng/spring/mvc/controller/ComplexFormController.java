@@ -46,7 +46,7 @@ public class ComplexFormController {
 	}
 
 	@RequestMapping(path = "/processUpload", method = RequestMethod.POST)
-	public String upload(@RequestParam("file1") CommonsMultipartFile file, HttpSession session, Model model) {
+	public String upload(@RequestParam("file1") CommonsMultipartFile file, HttpSession httpSession, Model model) {
 
 		try {
 
@@ -61,7 +61,7 @@ public class ComplexFormController {
 
 			// Path where eclipse deploys the application, so that image will be deleted
 			// once redploys
-			String contextPath = session.getServletContext().getRealPath("/");
+			String contextPath = httpSession.getServletContext().getRealPath("/");
 			String filePath = contextPath + "WEB-INF/Resources/Images/" + file.getOriginalFilename();
 
 			try (FileOutputStream fos = new FileOutputStream(filePath)) {
